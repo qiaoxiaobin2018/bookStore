@@ -18,10 +18,10 @@
 </head>
 <body>
 <h3 style="color: blueviolet">${msg}</h3>
-<ul>
-    <li><a href="<c:url value="/index.jsp"/> ">主页</a></li>
-    <li><a href="<c:url value="/qian/user/login.jsp"/> ">登录</a></li>
-    <li><a href="<c:url value="/qian/user/regist.jsp"/> ">注册</a></li>
-</ul>
+<%--<ul>--%>
+<%--    <li><a href="<c:url value="/index.jsp"/> ">主页</a></li>--%>
+<%--    <li><a href="<c:url value="/qian/user/login.jsp"/> ">登录</a></li>--%>
+<%--    <li><a href="<c:url value="/qian/user/regist.jsp"/> ">注册</a></li>--%>
+<%--</ul>--%>
 </body>
 </html>

@@ -14,6 +14,7 @@
 %>
 <html>
 <head>
+    <base target="body"/>
     <title>我的购物车</title>
     <base href="<%=basePath%>">
     <style type="text/css">
@@ -39,13 +40,13 @@
     </c:when>
     <c:otherwise>
         <h3 style="color: purple" align="center">我的购物车</h3>
-        <table width="100%" cellspacing="0" style="background: aliceblue">
-            <tr>
+        <table width="100%" border="1" bgcolor="#f0f8ff" cellspacing="0" style="background: aliceblue">
+            <tr style="border-color: aliceblue">
                 <td colspan="7" align="right" style="font-size: 15pt;font-weight: 900">
                     <a href="<c:url value="/cartServlet?method=clear"/> ">清空购物车</a>
                 </td>
             </tr>
-            <tr>
+            <tr style="border-color: aliceblue">
                 <th align="center">图片</th>
                 <th align="center">书名</th>
                 <th align="center">作者</th>
@@ -55,7 +56,7 @@
                 <th align="center">操作</th>
             </tr>
             <c:forEach items="${sessionScope.cart.cartItems}" var="cartItem">
-                <tr>
+                <tr style="border-color: aliceblue">
                     <td><img src="<c:url value="/${cartItem.book.image}"/> "></td>
                     <td><font color="purple">${cartItem.book.bname}</font> </td>
                     <td><font color="purple">${cartItem.book.author}</font> </td>
@@ -65,57 +66,18 @@
                     <td><a href="<c:url value="/cartServlet?method=delete&bid=${cartItem.book.bid}"/> ">删除</a> </td>
                 </tr>
             </c:forEach>
-            <tr>
+            <tr style="border-color: aliceblue">
                 <td colspan="7" align="right" style="font-size: 15pt;font-weight: 900">
                     合计：<font color="#ff7f50">￥${sessionScope.cart.total}</font>
                 </td>
             </tr>
-            <tr>
+            <tr style="border-color: aliceblue">
                 <td colspan="7" align="right" style="font-size: 15pt;font-weight: 900">
-                    <a href="<c:url value=""/> ">立即付款</a>
+                    <a href="<c:url value="/orderServlet?method=add"/> "><font color="#ff7f50">立即付款</font></a>
                 </td>
             </tr>
         </table>
     </c:otherwise>
 </c:choose>
-
-
-<%--<table width="100%" cellspacing="0" style="background: aliceblue">--%>
-<%--    <tr>--%>
-<%--        <td colspan="7" align="right" style="font-size: 15pt;font-weight: 900">--%>
-<%--            <a href="<c:url value="/cartServlet?method=clear"/> ">清空购物车</a>--%>
-<%--        </td>--%>
-<%--    </tr>--%>
-<%--    <tr>--%>
-<%--        <th align="center">图片</th>--%>
-<%--        <th align="center">书名</th>--%>
-<%--        <th align="center">作者</th>--%>
-<%--        <th align="center">单价</th>--%>
-<%--        <th align="center">数量</th>--%>
-<%--        <th align="center">小计</th>--%>
-<%--        <th align="center">操作</th>--%>
-<%--    </tr>--%>
-<%--    <c:forEach items="${sessionScope.cart.cartItems}" var="cartItem">--%>
-<%--        <tr>--%>
-<%--            <td><img src="<c:url value="/${cartItem.book.image}"/> "></td>--%>
-<%--            <td><font color="purple">${cartItem.book.bname}</font> </td>--%>
-<%--            <td><font color="purple">${cartItem.book.author}</font> </td>--%>
-<%--            <td><font color="purple">￥${cartItem.book.price}</font> </td>--%>
-<%--            <td><font color="purple">${cartItem.count}</font> </td>--%>
-<%--            <td><font color="purple">￥${cartItem.subTotal}</font> </td>--%>
-<%--            <td><a href="<c:url value="/cartServlet?method=delete&bid=${cartItem.book.bid}"/> ">删除</a> </td>--%>
-<%--        </tr>--%>
-<%--    </c:forEach>--%>
-<%--    <tr>--%>
-<%--        <td colspan="7" align="right" style="font-size: 15pt;font-weight: 900">--%>
-<%--            合计：<font color="#ff7f50">￥${sessionScope.cart.total}</font>--%>
-<%--        </td>--%>
-<%--    </tr>--%>
-<%--    <tr>--%>
-<%--        <td colspan="7" align="right" style="font-size: 15pt;font-weight: 900">--%>
-<%--            <a href="<c:url value=""/> ">立即付款</a>--%>
-<%--        </td>--%>
-<%--    </tr>--%>
-<%--</table>--%>
 </body>
 </html>
