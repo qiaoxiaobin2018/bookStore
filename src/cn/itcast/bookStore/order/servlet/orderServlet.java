@@ -83,9 +83,6 @@ public class orderServlet extends BaseServlet {
         * 4. 转发到 /order/list.jsp 中
         * */
         User user = (User)request.getSession().getAttribute("user");
-
-        System.out.println(user.toString());
-
         List<Order> orderList = orderService.myOrders(user.getUid());
         request.setAttribute("orderList",orderList);
 
@@ -114,6 +111,20 @@ public class orderServlet extends BaseServlet {
             request.setAttribute("msg",e.getMessage());
             return "f:/qian/msg.jsp";
         }
+    }
+
+    /*
+    * 支付
+    * */
+    public String pay(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        /*
+        * 1. 获取订单 oid
+        * 2. 改变订单状态 orderService#pay()
+        * */
+        String oid = request.getParameter("oid");
+        orderService.pay(oid);
+        request.setAttribute("msg","支付成功！");
+        return "f:/qian/msg.jsp";
     }
 
 }

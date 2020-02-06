@@ -70,9 +70,10 @@
     </tr>
 </c:forEach>
 </table><br/>
-<form action="<c:url value=""/> " method="post">
-    收货地址：<input type="text" name="address"/><br/>
-    支付方式：<input type="radio" name="pay" value="1"><img src="<c:url value="/pay/weixin.JPG"/> "/>&nbsp;&nbsp;
+<form action="<c:url value="orderServlet?method=pay"/> " method="post">
+    <input type="hidden" name="oid" value="${order.oid}"/>
+    收货地址：<input type="text" name="address"  value="山西省太原市小店区坞城路92号山西大学"/><br/>
+    支付方式：<input type="radio" name="pay" value="1" onselect="true"><img src="<c:url value="/pay/weixin.JPG"/> "/>&nbsp;&nbsp;
     <input type="radio" name="pay" value="2"><img src="<c:url value="/pay/zhifubao.JPG"/> "/>&nbsp;&nbsp;
     <input type="radio" name="pay" value="3"><img src="<c:url value="/pay/yinglian.JPG"/> "/><br/>
     <input type="submit" value="提交订单">

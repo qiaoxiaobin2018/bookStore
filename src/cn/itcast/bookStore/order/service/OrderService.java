@@ -64,4 +64,12 @@ public class OrderService {
         orderDao.updateState(oid,4);
 
     }
+
+    /*
+    * 支付
+    * */
+    public void pay(String oid) {
+        //设置订单状态为 2 ，已支付但未发货状态
+        orderDao.updateState(oid,2);
+    }
 }
