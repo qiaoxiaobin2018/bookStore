@@ -16,11 +16,20 @@
     <base target="body">
     <title>decs</title>
     <base href="<%=basePath%>">
+    <script type="text/javascript">
+        function addMethod(method) {
+            var btn = document.getElementById("method");
+            btn.value = method;
+        }
+    </script>
 </head>
 <h3 style="color: purple" align="center">书籍详情</h3>
 <img style="margin: 30px" src="<c:url value="/${book.image}"/>"/>
 
-<form style="margin: 30px" action="<c:url value=""/> " method="post">
+<form style="margin: 30px" action="<c:url value="/admin/adminBookServlet"/> " method="post">
+    <input type="hidden" name="method" id="method"/>
+    <input type="hidden" name="bid" value="${book.bid}"/>
+    <input type="hidden" name="image" value="${book.image}"/>
     书名：<input type="text" name="bname" value="${book.bname}"/><br/>
     作者：<input type="text" name="author" value="${book.author}"/><br/>
     价格：￥<input type="text" name="price" value="${book.price}"/><br/>
@@ -30,11 +39,10 @@
                     ${category.cname}
                 </option>
         </c:forEach>
-        </select>
-    <input hidden="hidden" type="text" name="bid" value="${book.bid}"/><br/>
-    <input type="submit" value="修改">
+        </select><br/>
+    <input type="submit" onclick="addMethod('edit');alert('修改成功！')" value="修改">&nbsp;&nbsp;
+    <input type="submit" onclick="addMethod('delete');return confirm('确认删除吗？')" value="删除" style="color: crimson">
 </form>
-<a style="margin: 30px" href="<c:url value=""/> "><span style="color: darkorange">删除</span> </a>
 
 </body>
 </html>

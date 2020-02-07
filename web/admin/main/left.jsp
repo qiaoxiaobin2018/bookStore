@@ -25,7 +25,7 @@
 
 <ul style="color: darkorange">
     <li><a href="<c:url value="/admin/adminBookServlet?method=findAll"/> ">查看所有图书</a></li>
-    <li><a href="<c:url value="/admin/category/add.jsp"/> ">添加图书</a></li>
+    <li><a href="<c:url value="/admin/adminBookServlet?method=addPre"/> ">添加图书</a></li>
 </ul>
 </body>
 </html>

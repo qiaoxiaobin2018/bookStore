@@ -21,4 +21,22 @@ public class BookService {
     public Book load(String bid) {
         return bookDao.load(bid);
     }
+
+    /*
+     * 添加一本图书
+     * */
+    public void add(Book book) {
+        bookDao.add(book);
+    }
+
+    /*
+     * 删除一本图书
+     * */
+    public void delete(String bid) {
+        bookDao.delete(bid);
+    }
+
+    public void edit(Book book) {
+        bookDao.edit(book);
+    }
 }

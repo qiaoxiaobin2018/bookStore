@@ -33,6 +33,7 @@
           <element id="file-copy" path="D:/jar file/JavaMail/mail.jar" />
           <element id="file-copy" path="D:/jar file/JavaMail/activation.jar" />
           <element id="file-copy" path="D:/jar file/commons-io-1.4.jar" />
+          <element id="library" level="module" name="JUnit4" module-name="BookStore" />
         </element>
       </element>
     </root>

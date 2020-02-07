@@ -19,7 +19,7 @@
 <body>
 <h2 style="color: blueviolet">登录</h2>
 <span style="color: blueviolet">${msg}</span>
-<form action="<c:url value="/userServlet?method=login"/> " method="post">
+<form action="<c:url value="/userServlet?method=login"/> " method="post" target="_top">
     用户名：<input type="text" name="username" value="${form.username}"/><br/>
     密 码：<input type="text" name="password" value="${form.password}"/><br/>
     <input type="submit" value="登录">
